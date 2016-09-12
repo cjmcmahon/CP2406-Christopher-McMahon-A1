@@ -11,7 +11,7 @@ public class STDeck
         this.cards = new ArrayList<STCard>();
         for(int i = 0; i < numInitialCards; i++)
         {
-            cards.add(new STCard(i));
+            cards.add(new STPlayCard(i, "cardName" + i, 1, 2, 1f, CleavageType.NONE, CrustalAbundance.ULTRATRACE, EconomicValue.LOW));
         }
     }
 

@@ -1,14 +1,13 @@
-public class STCard
+public abstract class STCard
 {
-    private int id;
+    protected int id;
+    protected String cardName;
 
-    public STCard(int id)
+    public STCard(int id, String cardName)
     {
+        this.cardName = cardName;
         this.id = id;
     }
 
-    public String toString()
-    {
-        return "id=" + this.id;
-    }
+    public abstract String toString();
 }

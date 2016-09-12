@@ -8,7 +8,6 @@ public class Assignment1
         MenuItem userMenuChoice;
         int numPlayers;
         System.out.println("Hello, and welcome to the Super Trumps card game!\n");
-        // TODO: Add code from here on into infinite for loop to return to menu after menu choice until user exits
         for(;;)
         {
             displayMenu();
@@ -25,7 +24,6 @@ public class Assignment1
                     numPlayers = getValidNumberFromUser(3, 5, "Please enter a valid integer for number of players");
                     STGame game = new STGame(numPlayers, NUM_INIT_CARDS_IN_DECK, NUM_INIT_CARDS_IN_HAND);
                     game.testSetup();
-                    game.mainGameLoop();
                     break;
                 }
                 case INSTRUCTIONS:

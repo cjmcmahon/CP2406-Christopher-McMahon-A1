@@ -31,11 +31,6 @@ public class STGame
         }
     }
 
-    public void mainGameLoop()
-    {
-        // TODO: write game code
-    }
-
     public void testSetup()
     {
         for(STPlayer player : this.players)
