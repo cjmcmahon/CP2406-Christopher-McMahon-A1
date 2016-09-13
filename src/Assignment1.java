@@ -3,7 +3,8 @@ public class Assignment1
 {
     public static void main(String[] args)
     {
-        final int NUM_INIT_CARDS_IN_DECK = 60;
+//        final int NUM_INIT_CARDS_IN_DECK = 60; // Do we really need to specify this? Could give an XML file with the cards listed
+        final String DECK_XML_FILE_STRING = "MstCards_151021.plist";
         final int NUM_INIT_CARDS_IN_HAND = 8;
         MenuItem userMenuChoice;
         int numPlayers;
@@ -22,7 +23,7 @@ public class Assignment1
                     // Ask how many players the user wishes to play against
                     System.out.print("Please enter how many players (3 to 5) are going to play this game\n >> ");
                     numPlayers = getValidNumberFromUser(3, 5, "Please enter a valid integer for number of players");
-                    STGame game = new STGame(numPlayers, NUM_INIT_CARDS_IN_DECK, NUM_INIT_CARDS_IN_HAND);
+                    STGame game = new STGame(numPlayers, DECK_XML_FILE_STRING, NUM_INIT_CARDS_IN_HAND);
                     game.testSetup();
                     break;
                 }

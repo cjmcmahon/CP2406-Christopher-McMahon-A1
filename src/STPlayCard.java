@@ -10,10 +10,10 @@ public class STPlayCard extends STCard
     private CrustalAbundance crustalAbundance;
     private EconomicValue economicValue;
 
-    public STPlayCard(int id, String cardName, int mineralHardnessLow, int mineralHardnessHigh, float specificGravity,
+    public STPlayCard(String cardName, int mineralHardnessLow, int mineralHardnessHigh, float specificGravity,
                       CleavageType cleavageType, CrustalAbundance crustalAbundance, EconomicValue economicValue)
     {
-        super(id, cardName);
+        super(cardName);
         this.mineralHardnessLow = mineralHardnessLow;
         this.mineralHardnessHigh = mineralHardnessHigh;
         this.specificGravity = specificGravity;
@@ -24,7 +24,7 @@ public class STPlayCard extends STCard
 
     public String toString()
     {
-        return "CardID = " + this.id + " cardName = " + this.cardName + " minHard = " + this.mineralHardnessLow +
+        return "cardName = " + this.cardName + " minHard = " + this.mineralHardnessLow +
                 "-" + this.mineralHardnessHigh + " spGrav = " + this.specificGravity + " clType = " +
                 this.cleavageType + " crAbun = " + this.crustalAbundance + " ecVal = " + this.economicValue;
     }

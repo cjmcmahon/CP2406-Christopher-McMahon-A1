@@ -8,10 +8,10 @@ public class STGame
     private STDeck gameDeck;
     private STPlayer[] players;
 
-    STGame(int numPlayers, int deckSize, int handSize)
+    STGame(int numPlayers, String deckFileString, int handSize)
     {
         this.numPlayers = numPlayers;
-        this.gameDeck = new STDeck(deckSize);
+        this.gameDeck = new STDeck(deckFileString);
         this.playerOrder = new int [numPlayers];
         this.players = new STPlayer[numPlayers];
         for(int i = 0; i < numPlayers; i++)
