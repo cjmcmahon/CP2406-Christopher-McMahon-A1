@@ -26,6 +26,8 @@ public class XmlReadTest
                 if(cardType.equals("play"))
                 {
                     System.out.println("Deal with play card");
+                    String tmp = dictElement.getElementsByTagName("string").item(6).getTextContent();
+                    System.out.println(tmp);
                 }
                 else if(cardType.equals("trump"))
                 {

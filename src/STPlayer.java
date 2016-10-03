@@ -1,8 +1,8 @@
 import java.util.ArrayList;
-public class STPlayer
+public abstract class STPlayer
 {
-    private int id;
-    private ArrayList<STCard> playerHand;
+    protected int id;
+    protected ArrayList<STCard> playerHand;
 
     public STPlayer(int id)
     {

@@ -2,6 +2,7 @@
 // Also for a field in the trump card class
 public enum CardPlayType
 {
+    NULL,
     ECONOMIC_VALUE,
     CRUSTUAL_ABUNDANCE,
     HARDNESS,

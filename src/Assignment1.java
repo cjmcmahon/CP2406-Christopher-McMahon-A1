@@ -35,7 +35,8 @@ public class Assignment1
                 case EXIT:
                 {
                     // Exit the game
-                    return;
+                    //return;
+                    System.exit(0);
                 }
                 case INVALID_CHOICE:
                 {
@@ -88,11 +89,11 @@ public class Assignment1
         int userChoice;
         userChoice = getValidNumberFromUser(1, 3, "That input was invalid, please enter one of the following:\n1 - New Game"
             + "\n2 - View Instructions\n3 - Exit");
-        for(MenuItem mnuItm : MenuItem.values())
+        for(MenuItem menuItem : MenuItem.values())
         {
-            if(userChoice == mnuItm.ordinal())
+            if(userChoice == menuItem.ordinal())
             {
-                return mnuItm;
+                return menuItem;
             }
         }
         // This code should only run if no match was found, force invalid
