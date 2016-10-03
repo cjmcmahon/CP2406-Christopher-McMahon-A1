@@ -4,7 +4,7 @@ public enum CardPlayType
 {
     NULL,
     ECONOMIC_VALUE,
-    CRUSTUAL_ABUNDANCE,
+    CRUSTAL_ABUNDANCE,
     HARDNESS,
     CLEAVAGE,
     SPECIFIC_GRAVITY,

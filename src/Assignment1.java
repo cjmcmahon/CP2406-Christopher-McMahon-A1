@@ -24,7 +24,21 @@ public class Assignment1
                     System.out.print("Please enter how many players (3 to 5) are going to play this game\n >> ");
                     numPlayers = getValidNumberFromUser(3, 5, "Please enter a valid integer for number of players");
                     STGame game = new STGame(numPlayers, DECK_XML_FILE_STRING, NUM_INIT_CARDS_IN_HAND);
-                    game.testSetup();
+                    // Testing mode: view players hands (just card titles) and player order
+//                    game.testSetup();
+                    // Tell the user their id number, who the dealer is and the player order
+                    System.out.println("You are player 0");
+                    System.out.println("The dealer is player " + game.getDealerID());
+                    int[] playerOrder = game.getPlayerOrder();
+                    String playerOrderString = "The player order is : ";
+                    for(int i = 0; i < playerOrder.length - 1; i++)
+                    {
+                        playerOrderString = playerOrderString + playerOrder[i] + ", ";
+                    }
+                    playerOrderString = playerOrderString + playerOrder[playerOrder.length - 1];
+                    System.out.println(playerOrderString);
+                    // Enter main loop
+                    gameLoop(game);
                     break;
                 }
                 case INSTRUCTIONS:
@@ -105,5 +119,37 @@ public class Assignment1
     {
         System.out.println("Main Menu\nMake a selection by typing in the appropriate number.");
         System.out.print("1 - Start new game\n2 - View Instructions\n3 - Exit\n>> ");
+    }
+
+    private static void gameLoop(STGame game)
+    {
+        // Define some game logic flags (eg. what the current card type is, is the game running etc...)
+        boolean isGameRunning = true; // Set to true initially as we are starting the game, hence it should be running
+        CardPlayType currentCardPlayType = CardPlayType.NULL; // Keeps track of the category in play currently
+                                                              // Initialise to NULL as nothing has been played
+        int lastPlayerID; // Keeps track of the last player to have played a card
+        int[] playerOrder = game.getPlayerOrder();
+        int currentPlayer = playerOrder[0];
+        boolean playerPlayedTurn;
+        // Show player their initial cards
+        System.out.println("Your initial hand is :");
+        ArrayList<STCard> tmpList = game.players[0].getPlayerHand();
+        for(int i = 0; i < tmpList.size(); i++)
+        {
+            System.out.println(tmpList.get(i));
+        }
+        // Start initial round
+        game.players[currentPlayer].startRound();
+        while(isGameRunning)
+        {
+            playerPlayedTurn = game.players[currentPlayer].playTurn();
+            if(playerPlayedTurn)
+            {
+                lastPlayerID = currentPlayer;
+            }
+            currentPlayer++;
+            // Ensure we don't go out of bounds
+            currentPlayer = currentPlayer % game.numPlayers;
+        }
     }
 }

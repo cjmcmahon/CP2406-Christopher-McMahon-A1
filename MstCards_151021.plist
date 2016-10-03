@@ -47,7 +47,6 @@
 
 			<key>economic_value</key> 
 			<string>moderate</string>
-
 		</dict>
 
 		<dict>
@@ -93,9 +92,7 @@
 
 			<key>economic_value</key> 
 			<string>moderate</string>
-
 		</dict>
-
 
 		<dict>
 			<key>fileName</key> 
@@ -140,10 +137,7 @@
 
 			<key>economic_value</key> 
 			<string>moderate</string>
-
 		</dict>
-
-
 
 		<dict>
 			<key>fileName</key> 
@@ -187,9 +181,7 @@
 
 			<key>economic_value</key> 
 			<string>low</string>
-
 		</dict>
-
 
 		<dict>
 			<key>fileName</key> 
@@ -233,9 +225,7 @@
 
 			<key>economic_value</key> 
 			<string>moderate</string>
-
 		</dict>
-
 
 		<dict>
 			<key>fileName</key> 
@@ -279,8 +269,8 @@
 
 			<key>economic_value</key> 
 			<string>trivial</string>
-
 		</dict>
+
 		<dict>
 			<key>fileName</key> 
 			<string>Slide07.jpg</string>
@@ -322,7 +312,6 @@
 
 			<key>economic_value</key> 
 			<string>low</string>
-
 		</dict>
 
 		<dict>
@@ -366,7 +355,6 @@
 
 			<key>economic_value</key> 
 			<string>trivial</string>
-
 		</dict>
 
 		<dict>
@@ -412,8 +400,8 @@
 
 			<key>economic_value</key> 
 			<string>low</string>
-
 		</dict>
+
 		<dict>
 			<key>fileName</key> 
 			<string>Slide10.jpg</string>
@@ -501,8 +489,8 @@
 
 			<key>economic_value</key> 
 			<string>low</string>
-
 		</dict>
+
 		<dict>
 			<key>fileName</key> 
 			<string>Slide12.jpg</string>
@@ -546,8 +534,8 @@
 
 			<key>economic_value</key> 
 			<string>moderate</string>
-
 		</dict>
+
 		<dict>
 			<key>fileName</key> 
 			<string>Slide13.jpg</string>
@@ -636,6 +624,7 @@
 			<key>economic_value</key> 
 			<string>trivial</string>
 		</dict>
+
 		<dict>
 			<key>fileName</key> 
 			<string>Slide15.jpg</string>
@@ -678,6 +667,7 @@
 			<key>economic_value</key> 
 			<string>low</string>
 		</dict>
+
 		<dict>
 			<key>fileName</key> 
 			<string>Slide16.jpg</string>
@@ -764,6 +754,7 @@
 			<key>economic_value</key> 
 			<string>moderate</string>
 		</dict>
+
 		<dict>
 			<key>fileName</key> 
 			<string>Slide18.jpg</string>
@@ -805,8 +796,8 @@
 
 			<key>economic_value</key> 
 			<string>high</string>
-
 		</dict>
+
 		<dict>
 			<key>fileName</key> 
 			<string>Slide19.jpg</string>
@@ -849,6 +840,7 @@
 			<key>economic_value</key> 
 			<string>moderate</string>
 		</dict>
+
 		<dict>
 			<key>fileName</key> 
 			<string>Slide20.jpg</string>
@@ -891,8 +883,6 @@
 			<key>economic_value</key> 
 			<string>moderate</string>
 		</dict>
-
-
 
 		<dict>
 			<key>fileName</key> 
@@ -1200,7 +1190,7 @@
 			<string>moderate</string>
 		</dict>
 
-	<dict>
+	    <dict>
 			<key>fileName</key> 
 			<string>Slide28.jpg</string>
 
@@ -1229,7 +1219,7 @@
 			</array>
 
 			<key>hardness</key> 
-			<string>3.5 4.5</string>
+			<string>3.5-4.5</string>
 
 			<key>specific_gravity</key> 
 			<string>4.6</string>
@@ -1551,7 +1541,7 @@
 			<string>moderate</string>
 		</dict>
 
-	<dict>
+	    <dict>
 			<key>fileName</key> 
 			<string>Slide36.jpg</string>
 
@@ -1905,7 +1895,6 @@
 			<string>low</string>
 		</dict>
 
-		
 		<dict>
 			<key>fileName</key> 
 			<string>Slide44.jpg</string>
@@ -1950,7 +1939,6 @@
 			<string>moderate</string>
 		</dict>
 
-		
 		<dict>
 			<key>fileName</key> 
 			<string>Slide45.jpg</string>
@@ -1994,7 +1982,6 @@
 			<key>economic_value</key> 
 			<string>moderate</string>
 		</dict>
-
 		
 		<dict>
 			<key>fileName</key> 

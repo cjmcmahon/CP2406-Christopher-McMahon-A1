@@ -52,14 +52,14 @@ public class STDeck
                         occurrence.add(dictElement.getElementsByTagName("string").item(6).getTextContent());
                         int j = 0; // j is to be used as a counter for an offset to deal with varying number of occurrences
                         String tmpString = dictElement.getElementsByTagName("string").item(7).getTextContent();
-                        if(tmpString.equals("igneous") || tmpString.equals("metamorphic") || tmpString.equals("sedimentary"))
+                        if(tmpString.equals("igneous") || tmpString.equals("metamorphic") || tmpString.equals("sedimentary") || tmpString.equals("mantle"))
                         {
                             // There is a second occurrence
                             occurrence.add(tmpString);
                             j++;
                             // Now check if there is a third, but only if there was a second
                             tmpString = dictElement.getElementsByTagName("string").item(8).getTextContent();
-                            if(tmpString.equals("igneous") || tmpString.equals("metamorphic") || tmpString.equals("sedimentary"))
+                            if(tmpString.equals("igneous") || tmpString.equals("metamorphic") || tmpString.equals("sedimentary") || tmpString.equals("mantle"))
                             {
                                 // There is a third occurrence
                                 occurrence.add(tmpString);
@@ -96,6 +96,9 @@ public class STDeck
             e.printStackTrace();
         }
 
+        // Testing, display results of this constructor
+//        System.out.println(cards);
+
     }
 
     public ArrayList<STCard> dealCards(int numCardsToDeal)
@@ -109,6 +112,11 @@ public class STDeck
             numCardsToDeal--;
         }
         return returnCards;
+    }
+
+    public int getLength()
+    {
+        return this.cards.size();
     }
 
     public String toString()

@@ -7,4 +7,15 @@ public class STAIPlayer extends STPlayer
     {
         super(id);
     }
+
+    public boolean playTurn()
+    {
+        // TODO - Write AI code
+        return false;
+    }
+
+    public void startRound()
+    {
+
+    }
 }

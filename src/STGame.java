@@ -2,11 +2,11 @@ import java.util.ArrayList;
 import java.util.Random;
 public class STGame
 {
-    private int numPlayers;
-    private int dealerID;
+    public int numPlayers;
+    public int dealerID;
     private int[] playerOrder;
-    private STDeck gameDeck;
-    private STPlayer[] players;
+    public STDeck gameDeck;
+    public STPlayer[] players;
 
     STGame(int numPlayers, String deckFileString, int handSize)
     {
@@ -33,6 +33,16 @@ public class STGame
         {
             this.playerOrder[i] = (this.dealerID + i + 1) % this.numPlayers;
         }
+    }
+
+    public int getDealerID()
+    {
+        return this.dealerID;
+    }
+
+    public int[] getPlayerOrder()
+    {
+        return this.playerOrder;
     }
 
     public void testSetup()

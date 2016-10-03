@@ -7,4 +7,15 @@ public class STHumanPlayer extends STPlayer
     {
         super(id);
     }
+
+    public boolean playTurn()
+    {
+        // TODO - Write human play turn
+        return false;
+    }
+
+    public void startRound()
+    {
+
+    }
 }

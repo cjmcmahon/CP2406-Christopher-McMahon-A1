@@ -20,6 +20,10 @@ public abstract class STPlayer
         return this.playerHand;
     }
 
+    public abstract boolean playTurn();
+
+    public abstract void startRound();
+
     public String toString()
     {
         return "playerID=" + this.id + "\ncards=" + this.playerHand;
