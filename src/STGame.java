@@ -14,14 +14,11 @@ public class STGame
         this.gameDeck = new STDeck(deckFileString);
         this.playerOrder = new int [numPlayers];
         this.players = new STPlayer[numPlayers];
-        // Player with id = 0 is always the user
-        this.players[0] = new STHumanPlayer(0);
-        this.players[0].setPlayerHand(gameDeck.dealCards(handSize));
-        // Initialise the AI players
-        for(int i = 1; i < numPlayers; i++)
+        // Initialise the players
+        for(int i = 0; i < numPlayers; i++)
         {
             // Create the player instance
-            this.players[i] = new STAIPlayer(i);
+            this.players[i] = new STPlayer(i);
             // Give the player some cards
             this.players[i].setPlayerHand(gameDeck.dealCards(handSize));
         }

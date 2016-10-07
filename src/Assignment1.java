@@ -1,3 +1,5 @@
+import com.sun.org.apache.xpath.internal.SourceTree;
+
 import java.util.*;
 public class Assignment1
 {
@@ -27,6 +29,7 @@ public class Assignment1
                     // Testing mode: view players hands (just card titles) and player order
 //                    game.testSetup();
                     // Tell the user their id number, who the dealer is and the player order
+                    // User is always player 0
                     System.out.println("You are player 0");
                     System.out.println("The dealer is player " + game.getDealerID());
                     int[] playerOrder = game.getPlayerOrder();
@@ -86,6 +89,11 @@ public class Assignment1
                     // Input is valid number and within the range
                     isInputValid = true;
                 }
+                else
+                {
+                    // Display error message
+                    System.out.print(errorMessage + "\n>> ");
+                }
             }
             else
             {
@@ -123,6 +131,8 @@ public class Assignment1
 
     private static void gameLoop(STGame game)
     {
+        // Define a scanner for the scope of the game loop
+        Scanner input = new Scanner(System.in);
         // Define some game logic flags (eg. what the current card type is, is the game running etc...)
         boolean isGameRunning = true; // Set to true initially as we are starting the game, hence it should be running
         CardPlayType currentCardPlayType = CardPlayType.NULL; // Keeps track of the category in play currently
@@ -130,7 +140,8 @@ public class Assignment1
         int lastPlayerID; // Keeps track of the last player to have played a card
         int[] playerOrder = game.getPlayerOrder();
         int currentPlayer = playerOrder[0];
-        boolean playerPlayedTurn;
+        STCard cardToPlay = null;
+        int idOfCardToPlay;
         // Show player their initial cards
         System.out.println("Your initial hand is :");
         ArrayList<STCard> tmpList = game.players[0].getPlayerHand();
@@ -139,17 +150,51 @@ public class Assignment1
             System.out.println(tmpList.get(i));
         }
         // Start initial round
-        game.players[currentPlayer].startRound();
         while(isGameRunning)
         {
-            playerPlayedTurn = game.players[currentPlayer].playTurn();
-            if(playerPlayedTurn)
+            // Start a new round off
+            boolean isRoundRunning = true;
+            // Step into round by having the next player to play the first card
+            if(currentPlayer == 0)
             {
-                lastPlayerID = currentPlayer;
+                // User plays
+                System.out.println("Your current hand:");
+                ArrayList<STCard> playerHand = game.players[0].getPlayerHand();
+                System.out.println(playerHand);
+                boolean isValidInput = false; // Now ask the user what card they want to play
+                System.out.println("Please select a card to play by typing the name of the card to play.");
+                System.out.print(">> ");
+                while(!isValidInput)
+                {
+                    String cardTitleToPlay = input.nextLine();
+                    for(int i = 0; i < playerHand.size(); i++)
+                    {
+                        if(cardTitleToPlay.equals(playerHand.get(i).getTitle()))
+                        {
+                            isValidInput = true;
+                            cardToPlay = playerHand.get(i);
+                            idOfCardToPlay = i; // So we can remove the card from the hand once it gets played
+                            break;
+                        }
+                    }
+                    // This should only be reachable if the card isn't in the players hand, print error
+                    System.out.println("Sorry, we couldn't find that specific card, please enter it again!");
+                    System.out.print(">> ");
+                }
+                // Card is valid, either check if it's a trump card and set the category to the trump card
+                // Otherwise ask the user what category they want to play
+                if(cardToPlay.getTitle().equals("The Mineralogist") || cardToPlay.getTitle().equals("The Geologist") ||
+                   cardToPlay.getTitle().equals("The Geophysicist") || cardToPlay.getTitle().equals("The Petrologist") ||
+                   cardToPlay.getTitle().equals("The Miner") || cardToPlay.getTitle().equals("The Gemmologist"))
+                {
+                    // Trump card
+                }
+
             }
-            currentPlayer++;
-            // Ensure we don't go out of bounds
-            currentPlayer = currentPlayer % game.numPlayers;
+            while(isRoundRunning)
+            {
+
+            }
         }
     }
 }

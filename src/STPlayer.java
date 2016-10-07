@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public abstract class STPlayer
+public class STPlayer
 {
     protected int id;
     protected ArrayList<STCard> playerHand;
@@ -19,10 +19,6 @@ public abstract class STPlayer
     {
         return this.playerHand;
     }
-
-    public abstract boolean playTurn();
-
-    public abstract void startRound();
 
     public String toString()
     {
